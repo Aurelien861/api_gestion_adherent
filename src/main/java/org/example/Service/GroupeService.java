@@ -1,4 +1,5 @@
 package org.example.Service;
+import org.example.Collections.Groupe;
 import org.example.Repository.GroupeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,9 +7,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class GroupeService {
 
-    @Autowired
-    private GroupeRepository groupeRepository;
+    private final GroupeRepository groupeRepository;
 
-    // Méthodes pour gérer les groupes...
+    @Autowired
+    public GroupeService(GroupeRepository groupeRepository) {
+        this.groupeRepository = groupeRepository;
+    }
+
+    public Groupe creerGroupe(Groupe groupe) {
+        return groupeRepository.save(groupe);
+    }
 }
+
 
