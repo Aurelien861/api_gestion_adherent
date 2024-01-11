@@ -1,0 +1,5 @@
+org\example\Membre.class
+org\example\TypeMembre.class
+org\example\MembreRepository.class
+org\example\Main.class
+org\example\MembreService.class
