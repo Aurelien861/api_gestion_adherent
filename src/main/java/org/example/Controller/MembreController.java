@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Controller;
 import org.example.Collections.Membre;
 import org.example.Service.MembreService;
 import org.springframework.beans.factory.annotation.Autowired;
