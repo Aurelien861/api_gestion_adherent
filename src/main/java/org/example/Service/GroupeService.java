@@ -17,6 +17,14 @@ public class GroupeService {
     public Groupe creerGroupe(Groupe groupe) {
         return groupeRepository.save(groupe);
     }
+
+    // Méthode pour ajouter un ID de membre à la liste des membres d'un groupe
+    public void ajouterMembreAuGroupe(String groupeId, String membreId) {
+        Groupe groupe = groupeRepository.findById(groupeId)
+                .orElseThrow(() -> new RuntimeException("Groupe non trouvé avec l'ID : " + groupeId));
+        groupe.getListeIdMembres().add(membreId);
+        groupeRepository.save(groupe);
+    }
 }
 
 

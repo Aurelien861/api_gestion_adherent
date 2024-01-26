@@ -2,6 +2,7 @@ package org.example.Collections;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Document
@@ -13,8 +14,8 @@ public class Groupe {
     private String nomGroupe;
     private String ville;
     private String codePostal;
-    private List<String> listeIdMembres;
-    private List<String> listeIdMateriaux;
+    private List<String> listeIdMembres = new ArrayList<>();
+    private List<String> listeIdMateriaux = new ArrayList<>();
 
     public String getId() {
         return id;
