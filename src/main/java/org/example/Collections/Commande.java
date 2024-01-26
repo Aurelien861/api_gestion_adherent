@@ -1,6 +1,10 @@
 package org.example.Collections;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.PrePersist;
+
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +17,7 @@ public class Commande {
     private String nomMembreActif;
     private Date date;
     private float prixTotal;
-    private List<String> listeIdMateriaux;
+    private List<String> listeIdMateriaux = new ArrayList<>();
     private String idMembreClient;
     private String idMembreActif;
 
@@ -79,6 +83,11 @@ public class Commande {
 
     public void setIdMembreActif(String idMembreActif) {
         this.idMembreActif = idMembreActif;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        date = new Date();
     }
 
     @Override

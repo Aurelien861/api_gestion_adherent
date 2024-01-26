@@ -22,6 +22,23 @@ public class MembreController {
         Membre membreInscrit = membreService.inscrireMembre(membre);
         return ResponseEntity.status(HttpStatus.CREATED).body(membreInscrit);
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody Membre loginDetails) {
+        boolean isValid = membreService.verifierLogin(loginDetails.getEmail(), loginDetails.getPassword());
+        if (isValid) {
+            return ResponseEntity.ok("Connexion réussie");
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Échec de la connexion");
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Membre> obtenirMembreParId(@PathVariable String id) {
+        return membreService.obtenirDetailsMembre(id)
+                .map(ResponseEntity::ok) // Si le membre est trouvé, renvoie le membre avec un statut 200 OK
+                .orElseGet(() -> ResponseEntity.notFound().build()); // Si non trouvé, renvoie 404 Not Found
+    }
+
 }
 
 

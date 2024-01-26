@@ -4,6 +4,7 @@ C:\BDs\api_gestion_adherent\src\main\java\org\example\Service\GroupeService.java
 C:\BDs\api_gestion_adherent\src\main\java\org\example\Service\MembreService.java
 C:\BDs\api_gestion_adherent\src\main\java\org\example\Enum\TypeMateriel.java
 C:\BDs\api_gestion_adherent\src\main\java\org\example\Repository\GroupeRepository.java
+C:\BDs\api_gestion_adherent\src\main\java\org\example\Controller\CommandeController.java
 C:\BDs\api_gestion_adherent\src\main\java\org\example\Collections\Groupe.java
 C:\BDs\api_gestion_adherent\src\main\java\org\example\Collections\Commande.java
 C:\BDs\api_gestion_adherent\src\main\java\org\example\Service\MaterielService.java

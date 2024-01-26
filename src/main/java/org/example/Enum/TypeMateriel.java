@@ -1,8 +1,8 @@
 package org.example.Enum;
 
 public enum TypeMateriel {
-    TYPE1, // Remplacez par les noms réels des types
-    TYPE2,
+    PC_Portable, // Remplacez par les noms réels des types
+    PC_Fixe,
     // autres types...
 }
 

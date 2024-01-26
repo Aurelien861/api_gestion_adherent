@@ -5,6 +5,7 @@ org\example\Service\MaterielService.class
 org\example\Controller\MaterielController.class
 org\example\Collections\Membre.class
 org\example\Collections\Commande.class
+org\example\Controller\CommandeController.class
 org\example\Enum\TypeMateriel.class
 org\example\Collections\Groupe.class
 org\example\Repository\CommandeRepository.class

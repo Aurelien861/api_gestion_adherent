@@ -16,6 +16,7 @@ public class Membre {
     //on a choisi de stocker les id de groupe dans la collection Membre afin de faire le lien à l'appartenance à un groupe
     private String idGroupe;
     private String idCommande;
+    private String password;
 
     public String getId() {
         return id;
@@ -79,6 +80,14 @@ public class Membre {
 
     public void setIdCommande(String idCommande) {
         this.idCommande = idCommande;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

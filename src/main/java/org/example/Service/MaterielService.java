@@ -17,6 +17,11 @@ public class MaterielService {
     public Materiel ajouterMateriel(Materiel materiel) {
         return materielRepository.save(materiel);
     }
+
+    public Materiel obtenirMaterielParId(String id) {
+        return materielRepository.findById(id).orElse(null); // Renvoie null si le matériel n'est pas trouvé
+    }
+
 }
 
 
