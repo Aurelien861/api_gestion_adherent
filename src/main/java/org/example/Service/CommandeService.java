@@ -12,7 +12,7 @@ import java.util.Random;
 
 @Service
 public class CommandeService {
-
+    @Autowired
     private final CommandeRepository commandeRepository;
     private final MaterielService materielService;
     private final MembreService membreService;
@@ -56,5 +56,21 @@ public class CommandeService {
 
 
         return commandeRepository.save(commande);
+    }
+
+    public List<Commande> rechercherCommandesParDates(Date startDate, Date endDate) {
+        return commandeRepository.findByDateBetween(startDate, endDate);
+    }
+
+    public List<Commande> rechercherCommandesParMembreClient(String nomMembreClient) {
+        return commandeRepository.findByNomMembreClient(nomMembreClient);
+    }
+
+    public List<Commande> rechercherCommandesParMembreActif(String nomMembreActif) {
+        return commandeRepository.findByNomMembreActif(nomMembreActif);
+    }
+
+    public List<Commande> rechercherCommandesParMaterielId(String materielId) {
+        return commandeRepository.findByMaterielId(materielId);
     }
 }
