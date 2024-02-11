@@ -2,15 +2,17 @@ package org.example.Repository;
 import org.example.Collections.Membre;
 import org.example.Enum.TypeMembre;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
-import javax.persistence.Id;
 import java.util.List;
 import java.util.Optional;
 
 public interface MembreRepository extends MongoRepository<Membre, String> {
     Membre findByEmail(String email);
 
-    List<Membre> findByGroupeIdAndTypeMembre(String idGroupe, TypeMembre typeMembre);
+    @Query("{ 'idGroupe' : ?0, 'typeMembre' : ?1 }")
+    List<Membre> findByGroupeIdAndTypeMembre(String groupeId, TypeMembre typeMembre);
+
 
     @Override
     Optional<Membre> findById(String s);

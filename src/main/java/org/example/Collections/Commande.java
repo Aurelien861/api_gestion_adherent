@@ -1,8 +1,6 @@
 package org.example.Collections;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import javax.persistence.PrePersist;
-
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -83,11 +81,6 @@ public class Commande {
 
     public void setIdMembreActif(String idMembreActif) {
         this.idMembreActif = idMembreActif;
-    }
-
-    @PrePersist
-    protected void onCreate() {
-        date = new Date();
     }
 
     @Override
