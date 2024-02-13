@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "mat1",
+    "numeroDeSerie": "NS-001",
+    "marque": "MarqueA",
+    "modele": "ModèleA1",
+    "type": "Type1",
+    "prix": 50.0,
+    "idGroupe": "G01",
+    "idCommande": "cmd1"
+  },
+  {
+    "_id": "mat2",
+    "numeroDeSerie": "NS-002",
+    "marque": "MarqueB",
+    "modele": "ModèleB1",
+    "type": "Type2",
+    "prix": 100.0,
+    "idGroupe": "G01",
+    "idCommande": "cmd1"
+  },
+  {
+    "_id": "mat3",
+    "numeroDeSerie": "NS-003",
+    "marque": "MarqueC",
+    "modele": "ModèleC1",
+    "type": "Type3",
+    "prix": 75.0,
+    "idGroupe": "G02",
+    "idCommande": "cmd2"
+  },
+  {
+    "_id": "mat4",
+    "numeroDeSerie": "NS-004",
+    "marque": "MarqueD",
+    "modele": "ModèleD1",
+    "type": "Type4",
+    "prix": 125.0,
+    "idGroupe": "G02",
+    "idCommande": "cmd2"
+  },
+  {
+    "_id": "mat5",
+    "numeroDeSerie": "NS-005",
+    "marque": "MarqueE",
+    "modele": "ModèleE1",
+    "type": "Type5",
+    "prix": 150.0,
+    "idGroupe": "G02",
+    "idCommande": "cmd2"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "_id": "membre1",
+    "nom": "Dupont",
+    "prenom": "Jean",
+    "adresse": "123 rue de Paris, Paris",
+    "email": "jean.dupont@example.com",
+    "typeMembre": "Client",
+    "idGroupe": "G01",
+    "idCommande": "cmd1",
+    "password": "pass1234"
+  },
+  {
+    "_id": "membre2",
+    "nom": "Curie",
+    "prenom": "Marie",
+    "adresse": "456 rue de Science, Paris",
+    "email": "marie.curie@example.com",
+    "typeMembre": "Actif",
+    "idGroupe": "G01",
+    "idCommande": "cmd1",
+    "password": "pass5678"
+  },
+  {
+    "_id": "membre3",
+    "nom": "Martin",
+    "prenom": "Pierre",
+    "adresse": "789 avenue de Lyon, Lyon",
+    "email": "pierre.martin@example.com",
+    "typeMembre": "Client",
+    "idGroupe": "G02",
+    "idCommande": "cmd2",
+    "password": "pass91011"
+  },
+  {
+    "_id": "membre4",
+    "nom": "Durand",
+    "prenom": "Sophie",
+    "adresse": "101 rue de Lyon, Lyon",
+    "email": "sophie.durand@example.com",
+    "typeMembre": "Actif",
+    "idGroupe": "G02",
+    "idCommande": "cmd2",
+    "password": "pass121314"
+  }
+]

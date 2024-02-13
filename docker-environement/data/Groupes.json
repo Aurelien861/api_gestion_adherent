@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "G01",
+    "numero": "G01",
+    "nomGroupe": "Les Explorateurs",
+    "ville": "Paris",
+    "codePostal": "75001",
+    "listeIdMembres": ["membre1", "membre2"],
+    "listeIdMateriaux": ["mat1", "mat2"]
+  },
+  {
+    "_id": "G02",
+    "numero": "G02",
+    "nomGroupe": "Les Bâtisseurs",
+    "ville": "Lyon",
+    "codePostal": "69001",
+    "listeIdMembres": ["membre3", "membre4"],
+    "listeIdMateriaux": ["mat3", "mat4", "mat5"]
+  }
+]
