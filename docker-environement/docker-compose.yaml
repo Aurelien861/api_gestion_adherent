@@ -8,6 +8,16 @@ services:
     volumes:
       - mongodb_data:/data/db
 
+  mongoimport:
+    image: mongo:4.4.4
+    depends_on:
+      - mongo
+    volumes:
+      - ./data:/data
+      - ./import-data.sh:/docker-entrypoint-initdb.d/import-data.sh
+    command: [ "/bin/bash", "/docker-entrypoint-initdb.d/import-data.sh" ]
+    environment:
+      - WAIT_HOSTS=mongo:27017
   rs01:
     image: mongo:4.4.4
     container_name: rs1
