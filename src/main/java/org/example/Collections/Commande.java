@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Document
+@Document(collection = "commandes")
 public class Commande {
     @Id
     private String id;

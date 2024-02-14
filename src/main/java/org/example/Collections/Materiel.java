@@ -3,7 +3,7 @@ import org.example.Enum.TypeMateriel;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "materiels")
 public class Materiel {
     @Id
     private String id;
