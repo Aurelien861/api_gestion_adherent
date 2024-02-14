@@ -73,4 +73,9 @@ public class CommandeService {
     public List<Commande> rechercherCommandesParMaterielId(String materielId) {
         return commandeRepository.findByMaterielId(materielId);
     }
+
+    public List<Commande> findAll() {
+        return commandeRepository.findAll();
+    }
+
 }

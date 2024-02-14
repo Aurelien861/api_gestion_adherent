@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/materiels")
 public class MaterielController {
@@ -22,5 +24,12 @@ public class MaterielController {
         Materiel nouveauMateriel = materielService.ajouterMateriel(materiel);
         return ResponseEntity.status(HttpStatus.CREATED).body(nouveauMateriel);
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Materiel>> getAllMateriels() {
+        List<Materiel> materiels = materielService.findAll();
+        return ResponseEntity.ok(materiels);
+    }
+
 }
 

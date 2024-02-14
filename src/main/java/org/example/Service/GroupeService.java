@@ -4,6 +4,8 @@ import org.example.Repository.GroupeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GroupeService {
 
@@ -45,6 +47,11 @@ public class GroupeService {
 
         return base + String.format("%03d", numero);
     }
+    public List<Groupe> findAll() {
+        return groupeRepository.findAll();
+    }
+
+
 }
 
 

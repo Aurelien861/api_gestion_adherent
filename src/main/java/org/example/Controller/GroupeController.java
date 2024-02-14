@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/groupes")
 public class GroupeController {
@@ -22,5 +24,12 @@ public class GroupeController {
         Groupe nouveauGroupe = groupeService.creerGroupe(groupe);
         return ResponseEntity.status(HttpStatus.CREATED).body(nouveauGroupe);
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Groupe>> getAllGroupes() {
+        List<Groupe> groupes = groupeService.findAll();
+        return ResponseEntity.ok(groupes);
+    }
+
 }
 

@@ -52,5 +52,12 @@ public class CommandeController {
     public ResponseEntity<List<Commande>> rechercherParMaterielId(@RequestParam String materielId) {
         return ResponseEntity.ok(commandeService.rechercherCommandesParMaterielId(materielId));
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Commande>> getAllCommandes() {
+        List<Commande> commandes = commandeService.findAll();
+        return ResponseEntity.ok(commandes);
+    }
+
 }
 

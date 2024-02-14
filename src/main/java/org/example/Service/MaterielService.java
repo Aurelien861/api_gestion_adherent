@@ -4,6 +4,8 @@ import org.example.Repository.MaterielRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MaterielService {
 
@@ -21,6 +23,11 @@ public class MaterielService {
     public Materiel obtenirMaterielParId(String id) {
         return materielRepository.findById(id).orElse(null); // Renvoie null si le matériel n'est pas trouvé
     }
+
+    public List<Materiel> findAll() {
+        return materielRepository.findAll();
+    }
+
 
 }
 

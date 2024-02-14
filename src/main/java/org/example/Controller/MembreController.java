@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/membres")
 public class MembreController {
@@ -37,6 +39,12 @@ public class MembreController {
         return membreService.obtenirDetailsMembre(id)
                 .map(ResponseEntity::ok) // Si le membre est trouvé, renvoie le membre avec un statut 200 OK
                 .orElseGet(() -> ResponseEntity.notFound().build()); // Si non trouvé, renvoie 404 Not Found
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Membre>> getAllMembres(){
+        List<Membre> membres = membreService.findAll();
+        return ResponseEntity.ok(membres);
     }
 
 }

@@ -45,6 +45,11 @@ public class MembreService {
         return membreRepository.findByGroupeIdAndTypeMembre(idGroupe, TypeMembre.Actif);
     }
 
+    public List<Membre> findAll() {
+        return membreRepository.findAll();
+    }
+
+
 }
 
 
