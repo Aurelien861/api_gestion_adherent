@@ -31,27 +31,18 @@ public class CommandeController {
         return ResponseEntity.status(HttpStatus.CREATED).body(nouvelleCommande);
     }
 
-    @GetMapping("/recherche/date")
-    public ResponseEntity<List<Commande>> rechercherParDates(
-            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate,
-            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate) {
-        return ResponseEntity.ok(commandeService.rechercherCommandesParDates(startDate, endDate));
+    @GetMapping("/recherche")
+    public ResponseEntity<List<Commande>> rechercherCommandes(
+            @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate,
+            @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate,
+            @RequestParam(required = false) String nomMembreClient,
+            @RequestParam(required = false) String nomMembreActif,
+            @RequestParam(required = false) String materielId) {
+
+        List<Commande> commandes = commandeService.rechercherCommandes(startDate, endDate, nomMembreClient, nomMembreActif, materielId);
+        return ResponseEntity.ok(commandes);
     }
 
-    @GetMapping("/recherche/membreClient")
-    public ResponseEntity<List<Commande>> rechercherParMembreClient(@RequestParam String nomMembreClient) {
-        return ResponseEntity.ok(commandeService.rechercherCommandesParMembreClient(nomMembreClient));
-    }
-
-    @GetMapping("/recherche/membreActif")
-    public ResponseEntity<List<Commande>> rechercherParMembreActif(@RequestParam String nomMembreActif) {
-        return ResponseEntity.ok(commandeService.rechercherCommandesParMembreActif(nomMembreActif));
-    }
-
-    @GetMapping("/recherche/materiel")
-    public ResponseEntity<List<Commande>> rechercherParMaterielId(@RequestParam String materielId) {
-        return ResponseEntity.ok(commandeService.rechercherCommandesParMaterielId(materielId));
-    }
 
     @GetMapping("/all")
     public ResponseEntity<List<Commande>> getAllCommandes() {

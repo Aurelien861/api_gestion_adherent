@@ -4,7 +4,10 @@ import org.example.Collections.Materiel;
 import org.example.Collections.Membre;
 import org.example.Repository.CommandeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 
 import java.util.Date;
 import java.util.List;
@@ -17,11 +20,14 @@ public class CommandeService {
     private final MaterielService materielService;
     private final MembreService membreService;
 
+    private final MongoTemplate mongoTemplate;
+
     @Autowired
-    public CommandeService(CommandeRepository commandeRepository, MaterielService materielService, MembreService membreService) {
+    public CommandeService(CommandeRepository commandeRepository, MaterielService materielService, MembreService membreService, MongoTemplate mongoTemplate) {
         this.commandeRepository = commandeRepository;
         this.materielService = materielService;
         this.membreService = membreService;
+        this.mongoTemplate = mongoTemplate;
     }
 
     public Commande passerCommande(String idMembreClient, String idMembreActif, List<String> listeIdMateriaux) {
@@ -76,6 +82,25 @@ public class CommandeService {
 
     public List<Commande> findAll() {
         return commandeRepository.findAll();
+    }
+
+    public List<Commande> rechercherCommandes(Date startDate, Date endDate, String nomMembreClient, String nomMembreActif, String materielId) {
+        Query query = new Query();
+
+        if (startDate != null && endDate != null) {
+            query.addCriteria(Criteria.where("date").gte(startDate).lte(endDate));
+        }
+        if (nomMembreClient != null) {
+            query.addCriteria(Criteria.where("nomMembreClient").is(nomMembreClient));
+        }
+        if (nomMembreActif != null) {
+            query.addCriteria(Criteria.where("nomMembreActif").is(nomMembreActif));
+        }
+        if (materielId != null) {
+            query.addCriteria(Criteria.where("materiels.id").is(materielId));
+        }
+
+        return mongoTemplate.find(query, Commande.class);
     }
 
 }
