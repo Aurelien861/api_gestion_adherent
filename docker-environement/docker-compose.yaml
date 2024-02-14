@@ -23,9 +23,10 @@ services:
     container_name: rs1
     volumes:
       - rs01:/data/db
+      - ./init-replica.sh:/docker-entrypoint-initdb.d/init-replica.sh
     ports:
       - 27011:27017
-    command: mongod --replSet rs0 --bind_ip_all --port 27017
+    command: [ "/bin/bash", "/docker-entrypoint-initdb.d/init-replica.sh" ]
 
   rs02:
     image: mongo:4.4.4
@@ -44,6 +45,7 @@ services:
     ports:
       - 27013:27017
     command: mongod --replSet rs0 --bind_ip_all --port 27017
+
 
 volumes:
   mongodb_data:
