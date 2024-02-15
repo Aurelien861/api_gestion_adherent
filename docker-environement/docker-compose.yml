@@ -18,37 +18,49 @@ services:
     command: [ "/bin/bash", "/docker-entrypoint-initdb.d/import-data.sh" ]
     environment:
       - WAIT_HOSTS=mongo:27017
-  rs01:
+
+  rs1:
     image: mongo:4.4.4
     container_name: rs1
     volumes:
-      - rs01:/data/db
-      - ./init-replica.sh:/docker-entrypoint-initdb.d/init-replica.sh
+      - rs1:/data/db
     ports:
-      - 27011:27017
-    command: [ "/bin/bash", "/docker-entrypoint-initdb.d/init-replica.sh" ]
+      - "27011:27017"
+    command: mongod --replSet rs0 --bind_ip_all --port 27017
 
-  rs02:
+  rs2:
     image: mongo:4.4.4
     container_name: rs2
     volumes:
-      - rs02:/data/db
+      - rs2:/data/db
     ports:
-      - 27012:27017
+      - "27012:27017"
     command: mongod --replSet rs0 --bind_ip_all --port 27017
 
-  rs03:
+  rs3:
     image: mongo:4.4.4
     container_name: rs3
     volumes:
-      - rs03:/data/db
+      - rs3:/data/db
     ports:
-      - 27013:27017
+      - "27013:27017"
     command: mongod --replSet rs0 --bind_ip_all --port 27017
 
+  init-replica-set:
+    image: mongo:4.4.4
+    container_name: init-replica-set
+    depends_on:
+      - rs1
+      - rs2
+      - rs3
+    volumes:
+      - ./init-replica-set.sh:/init-replica-set.sh
+    command: [ "/bin/bash", "/init-replica-set.sh" ]
+    networks:
+      - default
 
 volumes:
   mongodb_data:
-  rs01:
-  rs02:
-  rs03:
+  rs1:
+  rs2:
+  rs3:

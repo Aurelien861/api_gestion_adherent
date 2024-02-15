@@ -1,26 +1,26 @@
 #!/bin/bash
 
+# Démarrer MongoDB en arrière-plan
 mongod --replSet rs0 --bind_ip_all --port 27017 &
 
-until mongo --host rs1 --eval "print('attendre la connexion à rs1')" &>/dev/null; do
+# Attendre que MongoDB démarre
+until mongo --eval "print('attendre le démarrage de MongoDB')" &>/dev/null; do
   sleep 1
 done
 
-until mongo --host rs2 --eval "print('attendre la connexion à rs2')" &>/dev/null; do
-  sleep 1
-done
+# Initialiser le Replica Set seulement s'il n'est pas déjà configuré
+if mongo --eval "rs.status()" | grep -q "NotYetInitialized"; then
+  mongo --eval "
+    rs.initiate({
+      _id: 'rs0',
+      members: [
+        { _id: 0, host: 'rs1:27017' },
+        { _id: 1, host: 'rs2:27017' },
+        { _id: 2, host: 'rs3:27017' }
+      ]
+    })
+  "
+fi
 
-until mongo --host rs3 --eval "print('attendre la connexion à rs3')" &>/dev/null; do
-  sleep 1
-done
-
-mongo --host rs1 <<EOF
-rs.initiate({
-  _id: "rs0",
-  members: [
-    { _id: 0, host: "rs1:27017" },
-    { _id: 1, host: "rs2:27017" },
-    { _id: 2, host: "rs3:27017" }
-  ]
-})
-EOF
+# Garder le conteneur actif une fois le script terminé
+tail -f /dev/null
