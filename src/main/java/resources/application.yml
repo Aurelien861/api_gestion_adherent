@@ -1,4 +1,0 @@
-spring:
-  data:
-    mongodb:
-      uri: mongodb://localhost:27011,localhost:27012,localhost:27013/gestionadherentbdd?replicaSet=rs0
