@@ -2,51 +2,132 @@
   {
     "_id": "mat1",
     "numeroDeSerie": "NS-001",
-    "marque": "MarqueA",
-    "modele": "ModèleA1",
-    "type": "Type1",
-    "prix": 50.0,
+    "marque": "Tesla",
+    "modele": "Modele X",
+    "type": "Voiture",
+    "prix": 90000.0,
     "idGroupe": "G01",
-    "idCommande": ""
+    "idCommande": "cmd1"
   },
   {
     "_id": "mat2",
     "numeroDeSerie": "NS-002",
-    "marque": "MarqueB",
-    "modele": "ModèleB1",
-    "type": "Type2",
-    "prix": 100.0,
+    "marque": "Tesla",
+    "modele": "Modele Y",
+    "type": "Voiture",
+    "prix": 100000.0,
     "idGroupe": "G01",
     "idCommande": ""
   },
   {
     "_id": "mat3",
     "numeroDeSerie": "NS-003",
-    "marque": "MarqueC",
-    "modele": "ModèleC1",
-    "type": "Type3",
-    "prix": 75.0,
+    "marque": "Ferrari",
+    "modele": "La Ferrari",
+    "type": "Voiture d'exception",
+    "prix": 1250000.0,
     "idGroupe": "G02",
-    "idCommande": ""
+    "idCommande": "cmd2"
   },
   {
     "_id": "mat4",
     "numeroDeSerie": "NS-004",
-    "marque": "MarqueD",
-    "modele": "ModèleD1",
-    "type": "Type4",
-    "prix": 125.0,
+    "marque": "Dodge",
+    "modele": "Challenger",
+    "type": "Voiture d'exception",
+    "prix": 75000.0,
     "idGroupe": "G02",
     "idCommande": ""
   },
   {
     "_id": "mat5",
     "numeroDeSerie": "NS-005",
-    "marque": "MarqueE",
-    "modele": "ModèleE1",
-    "type": "Type5",
-    "prix": 150.0,
+    "marque": "Tesla",
+    "modele": "Modele S",
+    "type": "Voiture",
+    "prix": 60000.0,
     "idGroupe": "G02",
+    "idCommande": "cmd2"
+  },
+
+  {
+    "_id": "mat6",
+    "numeroDeSerie": "NS-006",
+    "marque": "Bugatti",
+    "modele": "Chiron",
+    "type": "Voiture d'exception",
+    "prix": 1000000.0,
+    "idGroupe": "G03",
+    "idCommande": ""
+  },
+  {
+    "_id": "mat7",
+    "numeroDeSerie": "NS-007",
+    "marque": "Kia",
+    "modele": "Picanto",
+    "type": "Voiture d'exception",
+    "prix": 9000.0,
+    "idGroupe": "G03",
+    "idCommande": "cmd3"
+  },
+  {
+    "_id": "mat8",
+    "numeroDeSerie": "NS-008",
+    "marque": "Renault",
+    "modele": "Megane",
+    "type": "Voiture d'exception",
+    "prix": 9149.0,
+    "idGroupe": "G03",
+    "idCommande": "cmd3"
+  },
+  {
+    "_id": "mat9",
+    "numeroDeSerie": "NS-009",
+    "marque": "RedBull",
+    "modele": "Formule 1",
+    "type": "Course",
+    "prix": 3000000.0,
+    "idGroupe": "G03",
+    "idCommande": ""
+  },
+  {
+    "_id": "mat10",
+    "numeroDeSerie": "NS-0010",
+    "marque": "Caddie",
+    "modele": "Caddie",
+    "type": "Course",
+    "prix": 100.0,
+    "idGroupe": "G03",
+    "idCommande": ""
+  },
+  {
+    "_id": "mat11",
+    "numeroDeSerie": "NS-0011",
+    "marque": "Porshe",
+    "modele": "Taycan Turbo S",
+    "type": "Voiture d'exception",
+    "prix": 250000.0,
+    "idGroupe": "G03",
+    "idCommande": "cmd3"
+  },
+  {
+    "_id": "mat12",
+    "numeroDeSerie": "NS-0012",
+    "marque": "BMW",
+    "modele": "M8",
+    "type": "Voiture",
+    "prix": 300000.0,
+    "idGroupe": "G03",
+    "idCommande": ""
+  },
+  {
+    "_id": "mat13",
+    "numeroDeSerie": "NS-0013",
+    "marque": "Velo",
+    "modele": "velo",
+    "type": "Pas une voiture",
+    "prix": 300.0,
+    "idGroupe": "G03",
     "idCommande": ""
   }
 ]
