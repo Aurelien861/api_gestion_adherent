@@ -50,8 +50,20 @@
     "adresse": "12 rue de l'INSA, 59300 Valenciennes",
     "email": "valentin.morin@lyreco.com",
     "typeMembre": "Actif",
-    "idGroupe": "G02",
+    "idGroupe": "G03",
     "idCommande": "",
     "password": "tropBi1CeCoursDeBDS!"
+  }
+  ,
+  {
+    "_id": "membre6",
+    "nom": "Mairesse",
+    "prenom": "Matheo",
+    "adresse": "29 rue Le Camping, 59410 Anzin",
+    "email": "herbin.mairesse.matheo@gmail.com",
+    "typeMembre": "Client",
+    "idGroupe": "G03",
+    "idCommande": "",
+    "password": "celuiKiAFeLaitData?"
   }
 ]

@@ -5,7 +5,7 @@
     "nomMembreActif": "Marie Curie",
     "date": "2024-02-14T00:00:00Z",
     "prixTotal": 150.0,
-    "listeIdMateriaux": ["mat1", "mat2"],
+    "listeIdMateriaux": ["mat1"],
     "idMembreClient": "membre1",
     "idMembreActif": "membre2"
   },
@@ -15,9 +15,19 @@
     "nomMembreActif": "Sophie Durand",
     "date": "2024-02-15T00:00:00Z",
     "prixTotal": 275.0,
-    "listeIdMateriaux": ["mat3", "mat4", "mat5"],
+    "listeIdMateriaux": ["mat3", "mat5"],
     "idMembreClient": "membre3",
     "idMembreActif": "membre4"
+  },
+  {
+    "_id": "cmd3",
+    "nomMembreClient": "Matheo Mairesse",
+    "nomMembreActif": "Valentin Morin",
+    "date": "2024-10-15T00:00:00Z",
+    "prixTotal": 275.0,
+    "listeIdMateriaux": ["mat7", "mat8"],
+    "idMembreClient": "membre6",
+    "idMembreActif": "membre5"
   }
 ]
 

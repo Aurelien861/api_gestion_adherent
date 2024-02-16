@@ -1,5 +1,4 @@
 package org.example.Collections;
-import org.example.Enum.TypeMateriel;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,7 +10,7 @@ public class Materiel {
     private String numeroDeSerie;
     private String marque;
     private String modele;
-    private TypeMateriel type;
+    private String type;
     private float prix;
     private String idGroupe;
     private String idCommande;
@@ -48,11 +47,11 @@ public class Materiel {
         this.modele = modele;
     }
 
-    public TypeMateriel getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeMateriel type) {
+    public void setType(String type) {
         this.type = type;
     }
 

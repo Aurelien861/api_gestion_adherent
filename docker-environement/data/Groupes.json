@@ -15,6 +15,15 @@
     "ville": "Lyon",
     "codePostal": "69001",
     "listeIdMembres": ["membre3", "membre4"],
-    "listeIdMateriaux": ["mat3", "mat4", "mat5"]
+    "listeIdMateriaux": ["mat3", "mat4"]
+  },
+  {
+    "_id": "G03",
+    "numero": "G03",
+    "nomGroupe": "Les Leaders",
+    "ville": "Grenoble",
+    "codePostal": "38000",
+    "listeIdMembres": ["membre5", "membre6"],
+    "listeIdMateriaux": ["mat5", "mat6", "mat7", "mat8", "mat9", "mat10", "mat11", "mat12", "mat13"]
   }
 ]
