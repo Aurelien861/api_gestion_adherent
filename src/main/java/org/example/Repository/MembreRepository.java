@@ -13,6 +13,8 @@ public interface MembreRepository extends MongoRepository<Membre, String> {
     @Query("{ 'idGroupe' : ?0, 'typeMembre' : ?1 }")
     List<Membre> findByGroupeIdAndTypeMembre(String groupeId, TypeMembre typeMembre);
 
+    List<Membre> findAllByIdGroupe(String s);
+
 
     @Override
     Optional<Membre> findById(String s);

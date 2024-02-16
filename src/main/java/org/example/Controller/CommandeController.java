@@ -22,6 +22,7 @@ public class CommandeController {
         this.commandeService = commandeService;
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/passerCommande")
     public ResponseEntity<Commande> passerCommande(@RequestBody Commande commande) {
         Commande nouvelleCommande = commandeService.passerCommande(
@@ -31,6 +32,7 @@ public class CommandeController {
         return ResponseEntity.status(HttpStatus.CREATED).body(nouvelleCommande);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/recherche")
     public ResponseEntity<List<Commande>> rechercherCommandes(
             @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate,
@@ -43,7 +45,7 @@ public class CommandeController {
         return ResponseEntity.ok(commandes);
     }
 
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/all")
     public ResponseEntity<List<Commande>> getAllCommandes() {
         List<Commande> commandes = commandeService.findAll();

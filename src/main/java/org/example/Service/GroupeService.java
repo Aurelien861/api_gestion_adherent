@@ -1,10 +1,12 @@
 package org.example.Service;
 import org.example.Collections.Groupe;
+import org.example.Collections.Membre;
 import org.example.Repository.GroupeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GroupeService {
@@ -30,6 +32,10 @@ public class GroupeService {
                 .orElseThrow(() -> new RuntimeException("Groupe non trouvé avec l'ID : " + groupeId));
         groupe.getListeIdMembres().add(membreId);
         groupeRepository.save(groupe);
+    }
+
+    public Optional<Groupe> obtenirDetailsGroupe(String groupeId) {
+        return groupeRepository.findById(groupeId); // Utilise la méthode findById pour récupérer le membre
     }
 
     private String genererNumeroGroupe(String dernierNomGroupe) {

@@ -1,4 +1,5 @@
 package org.example.Service;
+import org.example.Collections.CustomSession;
 import org.example.Collections.Membre;
 import org.example.Enum.TypeMembre;
 import org.example.Repository.MembreRepository;
@@ -29,12 +30,12 @@ public class MembreService {
         return membreInscrit;
     }
 
-    public boolean verifierLogin(String email, String password) {
+    public CustomSession verifierLogin(String email, String password) {
         Membre membre = membreRepository.findByEmail(email);
         if (membre != null && membre.getPassword().equals(password)) {
-            return true; // L'email et le mot de passe correspondent
+            return new CustomSession(membre.getId(), membre.getIdGroupe(), membre.getTypeMembre().toString()); // L'email et le mot de passe correspondent
         }
-        return false; // Aucun membre trouvé avec cet email ou le mot de passe ne correspond pas
+        return new CustomSession("null", "null", "null"); // Aucun membre trouvé avec cet email ou le mot de passe ne correspond pas
     }
 
     public Optional<Membre> obtenirDetailsMembre(String id) {
@@ -45,8 +46,8 @@ public class MembreService {
         return membreRepository.findByGroupeIdAndTypeMembre(idGroupe, TypeMembre.Actif);
     }
 
-    public List<Membre> findAll() {
-        return membreRepository.findAll();
+    public List<Membre> findAll(String groupId) {
+        return membreRepository.findAllByIdGroupe(groupId);
     }
 
 

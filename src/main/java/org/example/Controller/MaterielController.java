@@ -19,12 +19,14 @@ public class MaterielController {
         this.materielService = materielService;
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/ajout")
     public ResponseEntity<Materiel> ajouterMateriel(@RequestBody Materiel materiel) {
         Materiel nouveauMateriel = materielService.ajouterMateriel(materiel);
         return ResponseEntity.status(HttpStatus.CREATED).body(nouveauMateriel);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/all")
     public ResponseEntity<List<Materiel>> getAllMateriels() {
         List<Materiel> materiels = materielService.findAll();
