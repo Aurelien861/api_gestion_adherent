@@ -1,5 +1,6 @@
 package org.example.Controller;
 import org.example.Collections.Materiel;
+import org.example.Collections.Membre;
 import org.example.Service.MaterielService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,8 +29,8 @@ public class MaterielController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/all")
-    public ResponseEntity<List<Materiel>> getAllMateriels() {
-        List<Materiel> materiels = materielService.findAll();
+    public ResponseEntity<List<Materiel>> getAllMateriels(@RequestParam String groupId) {
+        List<Materiel> materiels = materielService.findAll(groupId);
         return ResponseEntity.ok(materiels);
     }
 

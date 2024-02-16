@@ -7,7 +7,7 @@
     "type": "Type1",
     "prix": 50.0,
     "idGroupe": "G01",
-    "idCommande": "cmd1"
+    "idCommande": ""
   },
   {
     "_id": "mat2",
@@ -17,7 +17,7 @@
     "type": "Type2",
     "prix": 100.0,
     "idGroupe": "G01",
-    "idCommande": "cmd1"
+    "idCommande": ""
   },
   {
     "_id": "mat3",
@@ -27,7 +27,7 @@
     "type": "Type3",
     "prix": 75.0,
     "idGroupe": "G02",
-    "idCommande": "cmd2"
+    "idCommande": ""
   },
   {
     "_id": "mat4",
@@ -37,7 +37,7 @@
     "type": "Type4",
     "prix": 125.0,
     "idGroupe": "G02",
-    "idCommande": "cmd2"
+    "idCommande": ""
   },
   {
     "_id": "mat5",
@@ -47,6 +47,6 @@
     "type": "Type5",
     "prix": 150.0,
     "idGroupe": "G02",
-    "idCommande": "cmd2"
+    "idCommande": ""
   }
 ]

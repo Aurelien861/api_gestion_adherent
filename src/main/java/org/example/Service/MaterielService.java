@@ -24,8 +24,8 @@ public class MaterielService {
         return materielRepository.findById(id).orElse(null); // Renvoie null si le matériel n'est pas trouvé
     }
 
-    public List<Materiel> findAll() {
-        return materielRepository.findAll();
+    public List<Materiel> findAll(String groupId) {
+        return materielRepository.findAllByIdGroupeAndIdCommande(groupId, "");
     }
 
 
