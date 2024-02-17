@@ -3,6 +3,7 @@ import org.example.Collections.Commande;
 import org.example.Collections.Materiel;
 import org.example.Collections.Membre;
 import org.example.Repository.CommandeRepository;
+import org.example.Repository.MaterielRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
@@ -18,14 +19,18 @@ public class CommandeService {
     @Autowired
     private final CommandeRepository commandeRepository;
     private final MaterielService materielService;
+
+    private final MaterielRepository materielRepository;
+
     private final MembreService membreService;
 
     private final MongoTemplate mongoTemplate;
 
     @Autowired
-    public CommandeService(CommandeRepository commandeRepository, MaterielService materielService, MembreService membreService, MongoTemplate mongoTemplate) {
+    public CommandeService(CommandeRepository commandeRepository, MaterielService materielService, MaterielRepository materielRepository, MembreService membreService, MongoTemplate mongoTemplate) {
         this.commandeRepository = commandeRepository;
         this.materielService = materielService;
+        this.materielRepository = materielRepository;
         this.membreService = membreService;
         this.mongoTemplate = mongoTemplate;
     }
@@ -60,8 +65,17 @@ public class CommandeService {
         }
         commande.setPrixTotal(prixTotal);
 
-
-        return commandeRepository.save(commande);
+        Commande commandePassee = commandeRepository.save(commande);
+        for (String idMateriel : listeIdMateriaux) {
+            Materiel materiel = materielService.obtenirMaterielParId(idMateriel);
+            if (materiel != null) {
+                materiel.setIdCommande(commandePassee.getId());
+                this.materielRepository.save(materiel);
+            } else {
+                throw new RuntimeException("Matériel non trouvé avec l'ID : " + idMateriel);
+            }
+        }
+        return commandePassee;
     }
 
     public List<Commande> rechercherCommandesParDates(Date startDate, Date endDate) {

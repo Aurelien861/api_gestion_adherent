@@ -33,9 +33,9 @@ public class MembreService {
     public CustomSession verifierLogin(String email, String password) {
         Membre membre = membreRepository.findByEmail(email);
         if (membre != null && membre.getPassword().equals(password)) {
-            return new CustomSession(membre.getId(), membre.getIdGroupe(), membre.getTypeMembre().toString()); // L'email et le mot de passe correspondent
+            return new CustomSession(membre.getId(), membre.getIdGroupe(), membre.getTypeMembre().toString(), membre.getNom()); // L'email et le mot de passe correspondent
         }
-        return new CustomSession("null", "null", "null"); // Aucun membre trouvé avec cet email ou le mot de passe ne correspond pas
+        return new CustomSession("null", "null", "null", "null"); // Aucun membre trouvé avec cet email ou le mot de passe ne correspond pas
     }
 
     public Optional<Membre> obtenirDetailsMembre(String id) {

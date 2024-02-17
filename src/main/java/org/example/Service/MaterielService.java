@@ -28,6 +28,10 @@ public class MaterielService {
         return materielRepository.findAllByIdGroupeAndIdCommande(groupId, "");
     }
 
+    public void commandMateriel(String id, String commandeId) {
+
+    }
+
 
 }
 
