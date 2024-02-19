@@ -7,7 +7,7 @@
     "type": "Voiture",
     "prix": 90000.0,
     "idGroupe": "G01",
-    "idCommande": "cmd1"
+    "idCommande": ""
   },
   {
     "_id": "mat2",
@@ -27,7 +27,7 @@
     "type": "Voiture d'exception",
     "prix": 1250000.0,
     "idGroupe": "G02",
-    "idCommande": "cmd2"
+    "idCommande": ""
   },
   {
     "_id": "mat4",
@@ -47,7 +47,7 @@
     "type": "Voiture",
     "prix": 60000.0,
     "idGroupe": "G02",
-    "idCommande": "cmd2"
+    "idCommande": ""
   },
 
   {
@@ -68,7 +68,7 @@
     "type": "Voiture d'exception",
     "prix": 9000.0,
     "idGroupe": "G03",
-    "idCommande": "cmd3"
+    "idCommande": ""
   },
   {
     "_id": "mat8",
@@ -78,7 +78,7 @@
     "type": "Voiture d'exception",
     "prix": 9149.0,
     "idGroupe": "G03",
-    "idCommande": "cmd3"
+    "idCommande": ""
   },
   {
     "_id": "mat9",
@@ -108,7 +108,7 @@
     "type": "Voiture d'exception",
     "prix": 250000.0,
     "idGroupe": "G03",
-    "idCommande": "cmd3"
+    "idCommande": ""
   },
   {
     "_id": "mat12",
