@@ -20,9 +20,9 @@ public class GroupeService {
 
     public Groupe creerGroupe(Groupe groupe) {
         Groupe dernierGroupe = groupeRepository.findTopByOrderByNumeroDesc();
-        String nouveauNomGroupe = genererNumeroGroupe(dernierGroupe != null ? dernierGroupe.getNomGroupe() : null);
+        String nouveauNumeroGroupe = genererNumeroGroupe(dernierGroupe != null ? dernierGroupe.getNumero() : null);
 
-        groupe.setNomGroupe(nouveauNomGroupe);
+        groupe.setNumero(nouveauNumeroGroupe);
 
         return groupeRepository.save(groupe);
     }

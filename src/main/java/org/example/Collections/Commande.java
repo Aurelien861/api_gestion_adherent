@@ -1,6 +1,7 @@
 package org.example.Collections;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,6 +14,8 @@ public class Commande {
 
     private String nomMembreClient;
     private String nomMembreActif;
+
+    @DateTimeFormat
     private Date date;
     private float prixTotal;
     private List<String> listeIdMateriaux = new ArrayList<>();

@@ -1,7 +1,7 @@
 [
   {
-    "_id": "G01",
-    "numero": "G01",
+    "_id": "G001",
+    "numero": "G001",
     "nomGroupe": "Les Explorateurs",
     "ville": "Paris",
     "codePostal": "75001",
@@ -9,8 +9,8 @@
     "listeIdMateriaux": ["mat1", "mat2"]
   },
   {
-    "_id": "G02",
-    "numero": "G02",
+    "_id": "G002",
+    "numero": "G002",
     "nomGroupe": "Les Bâtisseurs",
     "ville": "Lyon",
     "codePostal": "69001",
@@ -18,8 +18,8 @@
     "listeIdMateriaux": ["mat3", "mat4"]
   },
   {
-    "_id": "G03",
-    "numero": "G03",
+    "_id": "G003",
+    "numero": "G003",
     "nomGroupe": "Les Leaders",
     "ville": "Grenoble",
     "codePostal": "38000",

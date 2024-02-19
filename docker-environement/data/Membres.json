@@ -53,10 +53,20 @@
     "idGroupe": "G03",
     "idCommande": "",
     "password": "tropBi1CeCoursDeBDS!"
-  }
-  ,
+  },
   {
     "_id": "membre6",
+    "nom": "Dupont",
+    "prenom": "Mathieu",
+    "adresse": "29 rue Jean Jaurès, 59410 Anzin",
+    "email": "mathieu.dupont@mail.com",
+    "typeMembre": "Client",
+    "idGroupe": "G03",
+    "idCommande": "",
+    "password": "Exempleclient123"
+  },
+  {
+    "_id": "membre7",
     "nom": "Mairesse",
     "prenom": "Matheo",
     "adresse": "29 rue Le Camping, 59410 Anzin",

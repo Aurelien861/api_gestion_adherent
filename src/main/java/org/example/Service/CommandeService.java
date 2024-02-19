@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -39,6 +40,7 @@ public class CommandeService {
         Commande commande = new Commande();
         commande.setIdMembreClient(idMembreClient);
         commande.setListeIdMateriaux(listeIdMateriaux);
+        commande.setDate(new Date());
 
         Membre membreClient = membreService.obtenirDetailsMembre(idMembreClient)
                 .orElseThrow(() -> new RuntimeException("Membre client non trouvé avec l'ID : " + idMembreClient));
